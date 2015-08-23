@@ -1,0 +1,191 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>h8-getting-started.dependency-injection-yes.spring</groupId>
+	<artifactId>dependency-injection-yes-spring</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<repositories>
+		<repository>
+			<id>jboss</id>
+			<name>http://repository.jboss.com/maven2</name>
+			<url>http://repository.jboss.org/maven2</url>
+		</repository>
+
+		<repository>
+			<id>spring-maven-repo</id>
+			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>mvnrepository</id>
+			<url>http://mvnrepository.com/artifact</url>
+		</repository>
+		<repository>
+			<id>ibiblio</id>
+			<url>http://www.ibiblio.org/maven</url>
+		</repository>
+
+		<repository>
+			<id>Version99</id>
+			<name>Version 99 Does Not Exist Maven repository</name>
+			<layout>default</layout>
+			<url>http://no-commons-logging.zapto.org/mvn2</url>
+		</repository>
+
+		<repository>
+			<id>scriptlandia-repo</id>
+			<name>Scriptlandia Maven2 repository</name>
+			<url>http://scriptlandia-repository.googlecode.com/svn/trunk/tools</url>
+		</repository>
+
+
+		<repository>
+			<id>Maven-2-repo</id>
+			<name>Maven 2, jsr 350</name>
+			<url>http://repo2.maven.org/maven2</url>
+		</repository>
+
+	</repositories>
+
+
+	<build>
+		<defaultGoal>compile</defaultGoal>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+
+
+
+	<properties>
+		<spring.framework.version>2.5.6</spring.framework.version>
+	</properties>
+
+	<dependencies>
+
+		<!-- MODELLO DEI DATI -->
+		<dependency>
+			<groupId>max.esempi.h8tools</groupId>
+			<artifactId>ejb3-2-ddl-jpa-h8</artifactId>
+			<version>1.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.hibernate</groupId>
+					<artifactId>hibernate-annotations</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+
+		<!-- JPA persistence provider -->
+		<!-- org.hibernate.ejb.HibernatePersistence  -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>3.3.2.GA</version>
+		</dependency>
+
+		<!-- DEPENDENCY INJECTION -->
+		<!-- Spring Dependencies -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.framework.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.framework.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.framework.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+
+		<!-- TEST -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.framework.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.4</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+			<version>3.1.0.GA</version>
+		</dependency>
+
+
+
+		<!-- LOG -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.5.2</version>
+		</dependency>
+
+
+		<!-- DRIVER x Data Base -->
+		<dependency>
+			<groupId>ojdbc</groupId>
+			<artifactId>ojdbc</artifactId>
+			<version>14</version>
+		</dependency>
+		
+		
+		<!-- a che serve non lo so bene.... -->
+		<dependency>
+			<groupId>c3p0</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.1</version>
+		</dependency>
+		
+		<!-- x petclinic tutorial -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.6.0</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.6.0</version>
+			<scope>runtime</scope>
+		</dependency>
+		
+		
+	</dependencies>
+</project>
